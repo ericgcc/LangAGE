@@ -40,47 +40,6 @@ $(document).ready(function(){
             const div = document.getElementById(`s${i + 1}`);
             div.classList.remove("slider-blue-grey");
         });
-
-        sliders[i].noUiSlider.on('set', function(){
-            const div = document.getElementById(`s${i + 1}`);
-        	if(sliders[i].noUiSlider.get() < 48){
-        		div.classList.remove("slider-blue-grey");
-                div.classList.remove("slider-primary");
-                div.classList.remove("slider-primary-darken-4");
-                div.classList.add("slider-primary-lighten-3");
-            }else if(sliders[i].noUiSlider.get() > 51){
-                div.classList.remove("slider-blue-grey");
-                div.classList.remove("slider-primary");
-                div.classList.remove("slider-primary-lighten-3");
-                div.classList.add("slider-primary-darken-4");
-            }else{
-                div.classList.remove("slider-blue-grey");
-                div.classList.remove("slider-primary-darken-4");
-                div.classList.remove("slider-primary-lighten-3");
-                div.classList.add("slider-primary");
-            }
-        });
-
-        sliders[i].noUiSlider.on('slide', function(){
-            const div = document.getElementById(`s${i + 1}`);
-            if(sliders[i].noUiSlider.get() < 48){
-                div.classList.remove("slider-blue-grey");
-                div.classList.remove("slider-primary");
-                div.classList.remove("slider-primary-darken-4");
-                div.classList.add("slider-primary-lighten-3");
-            }else if(sliders[i].noUiSlider.get() > 51){
-                div.classList.remove("slider-blue-grey");
-                div.classList.remove("slider-primary");
-                div.classList.remove("slider-primary-lighten-3");
-                div.classList.add("slider-primary-darken-4");
-            }else{
-                div.classList.remove("slider-blue-grey");
-                div.classList.remove("slider-primary-darken-4");
-                div.classList.remove("slider-primary-lighten-3");
-                div.classList.add("slider-primary");
-            }
-        });
-
     }
 
     $("#ubaplayer").ubaPlayer({

@@ -10,31 +10,30 @@
           content="admin template, stack admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
     <title>LanguAGERating</title>
-    <link rel="apple-touch-icon" href="assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/ico/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i"
-          rel="stylesheet">
+    <link rel="apple-touch-icon" href="{!! asset("assets/images/ico/apple-icon-120.png") !!}">
+    <link rel="shortcut icon" type="image/x-icon" href="{!! asset("assets/images/ico/favicon.ico") !!}">
+    {!! Html::style("https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i") !!}
 
     <!-- BEGIN VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="assets/css/app/vendors.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/nouislider/nouislider.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/UbaPlayer/ubaplayer.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/webui-popover/jquery.webui-popover.min.css">
+    {!! Html::style("assets/css/app/vendors.css") !!}
+    {!! Html::style("assets/css/nouislider/nouislider.min.css") !!}
+    {!! Html::style("assets/css/UbaPlayer/ubaplayer.css") !!}
+    {!! Html::style("assets/css/webui-popover/jquery.webui-popover.min.css") !!}
     <!-- END VENDOR CSS-->
 
     <!-- BEGIN STACK CSS-->
-    <link rel="stylesheet" type="text/css" href="assets/css/app/app.css">
+    {!! Html::style("assets/css/app/app.css") !!}
     <!-- END STACK CSS-->
 
     <!-- BEGIN Page Level CSS-->
-    <link rel="stylesheet" type="text/css" href="assets/css/app/core/menu/horizontal-menu.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/app/core/colors/palette-gradient.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/nouislider/noui-slider.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/nouislider/palette-noui.css">
+    {!! Html::style("assets/css/app/core/menu/horizontal-menu.css") !!}
+    {!! Html::style("assets/css/app/core/colors/palette-gradient.css") !!}
+    {!! Html::style("assets/css/nouislider/noui-slider.css") !!}
+    {!! Html::style("assets/css/nouislider/palette-noui.css") !!}
     <!-- END Page Level CSS-->
 
     <!-- BEGIN Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="assets/css/views/index.css">
+    {!! Html::style("assets/css/views/index.css") !!}
     <!-- END Custom CSS-->
 </head>
 <body class="horizontal-layout horizontal-menu 2-columns   menu-expanded" data-open="hover"
@@ -45,9 +44,9 @@
         <div class="navbar-header" style="position: sticky">
             <ul class="nav navbar-nav flex-row">
                 <li class="nav-item">
-                    <a class="navbar-brand" href="index.html">
+                    <a class="navbar-brand" href="index.blade.php">
                         <img class="brand-logo" alt="stack admin logo"
-                             src="assets/images/logo/stack-logo-light.png">
+                             src="{!! asset("assets/images/logo/stack-logo-light.png") !!}">
                         <h2 class="brand-text">LanguAGERating</h2>
                     </a>
                 </li>
@@ -148,7 +147,7 @@
                                                 <div id="ubaplayer"></div>
                                                 <ul class="ubaplayer-controls">
                                                     <li>
-                                                        <a class="ubaplayer-button" href="assets/tracks/1_a053_début.mp3"></a>
+                                                        <a class="ubaplayer-button" href="{!! asset("assets/tracks/1_a053_début.mp3") !!}"></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -171,7 +170,7 @@
                                                 <label>2.&nbsp;&nbsp;</label>
                                                 <ul class="ubaplayer-controls">
                                                     <li>
-                                                        <a class="ubaplayer-button" href="assets/tracks/2_e025_début.mp3"></a>
+                                                        <a class="ubaplayer-button" href="{!! asset("assets/tracks/2_e025_début.mp3") !!}"></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -194,7 +193,7 @@
                                                 <label>3.&nbsp;&nbsp;</label>
                                                 <ul class="ubaplayer-controls">
                                                     <li>
-                                                        <a class="ubaplayer-button" href="assets/tracks/3_a048_début.mp3"></a>
+                                                        <a class="ubaplayer-button" href="{!! asset("assets/tracks/3_a048_début.mp3") !!}"></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -217,7 +216,7 @@
                                                 <label>4.&nbsp;&nbsp;</label>
                                                 <ul class="ubaplayer-controls">
                                                     <li>
-                                                        <a class="ubaplayer-button" href="assets/tracks/4_q013_début.mp3"></a>
+                                                        <a class="ubaplayer-button" href="{!! asset("assets/tracks/4_q013_début.mp3") !!}"></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -240,7 +239,7 @@
                                                 <label>5.&nbsp;&nbsp;</label>
                                                 <ul class="ubaplayer-controls">
                                                     <li>
-                                                        <a class="ubaplayer-button" href="assets/tracks/5_d011_début.mp3"></a>
+                                                        <a class="ubaplayer-button" href="{!! asset("assets/tracks/5_d011_début.mp3") !!}"></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -263,7 +262,7 @@
                                                 <label>6.&nbsp;&nbsp;</label>
                                                 <ul class="ubaplayer-controls">
                                                     <li>
-                                                        <a class="ubaplayer-button" href="assets/tracks/6_c018_début.mp3"></a>
+                                                        <a class="ubaplayer-button" href="{!! asset("assets/tracks/6_c018_début.mp3") !!}"></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -286,7 +285,7 @@
                                                 <label>7.&nbsp;&nbsp;</label>
                                                 <ul class="ubaplayer-controls">
                                                     <li>
-                                                        <a class="ubaplayer-button" href="assets/tracks/7_e047_début.mp3"></a>
+                                                        <a class="ubaplayer-button" href="{!! asset("assets/tracks/7_e047_début.mp3") !!}"></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -309,7 +308,7 @@
                                                 <label>8.&nbsp;&nbsp;</label>
                                                 <ul class="ubaplayer-controls">
                                                     <li>
-                                                        <a class="ubaplayer-button" href="assets/tracks/8_a027_début.mp3"></a>
+                                                        <a class="ubaplayer-button" href="{!! asset("assets/tracks/8_a027_début.mp3") !!}"></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -332,7 +331,7 @@
                                                 <label>9.&nbsp;&nbsp;</label>
                                                 <ul class="ubaplayer-controls">
                                                     <li>
-                                                        <a class="ubaplayer-button" href="assets/tracks/9_c053_début.mp3"></a>
+                                                        <a class="ubaplayer-button" href="{!! asset("assets/tracks/9_c053_début.mp3") !!}"></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -355,7 +354,7 @@
                                                 <label>10.&nbsp;&nbsp;</label>
                                                 <ul class="ubaplayer-controls">
                                                     <li>
-                                                        <a class="ubaplayer-button" href="assets/tracks/10_c017_début.mp3"></a>
+                                                        <a class="ubaplayer-button" href="{!! asset("assets/tracks/10_c017_début.mp3") !!}"></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -378,7 +377,7 @@
                                                 <label>11.&nbsp;&nbsp;</label>
                                                 <ul class="ubaplayer-controls">
                                                     <li>
-                                                        <a class="ubaplayer-button" href="assets/tracks/11_a025_début.mp3"></a>
+                                                        <a class="ubaplayer-button" href="{!! asset("assets/tracks/11_a025_début.mp3") !!}"></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -401,7 +400,7 @@
                                                 <label>12.&nbsp;&nbsp;</label>
                                                 <ul class="ubaplayer-controls">
                                                     <li>
-                                                        <a class="ubaplayer-button" href="assets/tracks/12_d048_début.mp3"></a>
+                                                        <a class="ubaplayer-button" href="{!! asset("assets/tracks/12_d048_début.mp3") !!}"></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -424,7 +423,7 @@
                                                 <label>13.&nbsp;&nbsp;</label>
                                                 <ul class="ubaplayer-controls">
                                                     <li>
-                                                        <a class="ubaplayer-button" href="assets/tracks/13_c027_début.mp3"></a>
+                                                        <a class="ubaplayer-button" href="{!! asset("assets/tracks/13_c027_début.mp3") !!}"></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -447,7 +446,7 @@
                                                 <label>14.&nbsp;&nbsp;</label>
                                                 <ul class="ubaplayer-controls">
                                                     <li>
-                                                        <a class="ubaplayer-button" href="assets/tracks/14_c037_début.mp3"></a>
+                                                        <a class="ubaplayer-button" href="{!! asset("assets/tracks/14_c037_début.mp3") !!}"></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -470,7 +469,7 @@
                                                 <label>15.&nbsp;&nbsp;</label>
                                                 <ul class="ubaplayer-controls">
                                                     <li>
-                                                        <a class="ubaplayer-button" href="assets/tracks/15_a013_début.mp3"></a>
+                                                        <a class="ubaplayer-button" href="{!! asset("assets/tracks/15_a013_début.mp3") !!}"></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -493,10 +492,10 @@
                                             <div class="row">
                                                 <div class="col-xl-11 col-lg-11 col-md-11 mb-11 button-set">
                                                     <button type="button" class="btn btn-warning mr-1">
-                                                        <i class="ft-x"></i> Cancel
+                                                        <i class="fa fa-save"></i> Save
                                                     </button>
                                                     <button type="submit" class="btn btn-primary">
-                                                        <i class="fa fa-check-square-o"></i> Save
+                                                        <i class="fa fa-check-square-o"></i> Submit
                                                     </button>
                                                 </div>
                                                 <div class="col-xl-1 col-lg-1 col-md-1 mb-1 button-set"></div>
@@ -520,25 +519,25 @@
     </p>
 </footer>
 <!-- BEGIN VENDOR JS-->
-<script src="assets/js/app/vendors.min.js" type="text/javascript"></script>
+{!! Html::script("assets/js/app/vendors.min.js") !!}
 <!-- BEGIN VENDOR JS-->
 
 <!-- BEGIN PAGE VENDOR JS-->
-<script type="text/javascript" src="assets/js/jquery/jquery.sticky.js"></script>
-<script src="assets/js/wNumb/wNumb.js" type="text/javascript"></script>
-<script src="assets/js/nouislider/nouislider.min.js" type="text/javascript"></script>
-<script src="assets/js/UbaPlayer/jquery.ubaplayer.min.js" type="text/javascript"></script>
-<script src="assets/js/webui-popover/jquery.webui-popover.min.js" type="text/javascript"></script>
+{!! Html::script("assets/js/jquery/jquery.sticky.js") !!}
+{!! Html::script("assets/js/wNumb/wNumb.js") !!}
+{!! Html::script("assets/js/nouislider/nouislider.min.js") !!}
+{!! Html::script("assets/js/UbaPlayer/jquery.ubaplayer.min.js") !!}
+{!! Html::script("assets/js/webui-popover/jquery.webui-popover.min.js") !!}
 <!-- END PAGE VENDOR JS-->
 
 <!-- BEGIN STACK JS-->
-<script src="assets/js/app/core/app-menu.js" type="text/javascript"></script>
-<script src="assets/js/app/core/app.js" type="text/javascript"></script>
-<script src="assets/js/app/customizer.js" type="text/javascript"></script>
+{!! Html::script("assets/js/app/core/app-menu.js") !!}
+{!! Html::script("assets/js/app/core/app.js") !!}
+{!! Html::script("assets/js/app/customizer.js") !!}
 <!-- END STACK JS-->
 
 <!-- BEGIN PAGE LEVEL JS-->
-<script src="assets/js/views/index.js" type="text/javascript"></script>
+{!! Html::script("assets/js/views/index.js") !!}
 <!-- END PAGE LEVEL JS-->
 </body>
 </html>
