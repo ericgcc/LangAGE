@@ -9,7 +9,7 @@
     <meta name="keywords"
           content="admin template, stack admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>LanguAGERating</title>
+    <title>LangAGE Evaluation</title>
     <link rel="apple-touch-icon" href="{!! asset("assets/images/ico/apple-icon-120.png") !!}">
     <link rel="shortcut icon" type="image/x-icon" href="{!! asset("assets/images/ico/favicon.ico") !!}">
     {!! Html::style("https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i") !!}
@@ -47,7 +47,7 @@
                     <a class="navbar-brand" href="index.blade.php">
                         <img class="brand-logo" alt="stack admin logo"
                              src="{!! asset("assets/images/logo/stack-logo-light.png") !!}">
-                        <h2 class="brand-text">LanguAGERating</h2>
+                        <h2 class="brand-text">LangAGE Evaluation</h2>
                     </a>
                 </li>
             </ul>
@@ -140,7 +140,8 @@
                                         </div>
                                         <div class="col-xl-1 col-lg-1 col-md-1 mb-1"></div>
                                     </div>
-                                    <form class="form form-horizontal form-custom-bordered">
+                                    {!! Form::open(['class' => 'form form-horizontal form-custom-bordered']) !!}
+                                    {{--<form class="form form-horizontal form-custom-bordered">--}}
                                         <div class="row">
                                             <div class="col-xl-1 col-lg-1 col-md-1 mb-1 offset-1 d-flex justify-content-end"> <!--align-items-center-->
                                                 <label>1.&nbsp;&nbsp;</label>
@@ -494,14 +495,14 @@
                                                     <button type="button" class="btn btn-warning mr-1">
                                                         <i class="fa fa-save"></i> Save
                                                     </button>
-                                                    <button type="submit" class="btn btn-primary">
+                                                    <button type="submit" class="btn btn-primary" id="submit">
                                                         <i class="fa fa-check-square-o"></i> Submit
                                                     </button>
                                                 </div>
                                                 <div class="col-xl-1 col-lg-1 col-md-1 mb-1 button-set"></div>
                                             </div>
                                         </div>
-                                    </form>
+                                    {!! Form::close() !!}
                                 </div>
                             </div>
                         </div>
