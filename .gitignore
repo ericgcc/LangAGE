@@ -11,3 +11,4 @@ npm-debug.log
 yarn-error.log
 storage/
 *.mp3
+.env
