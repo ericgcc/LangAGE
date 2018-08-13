@@ -30,6 +30,7 @@
     {!! Html::style("assets/css/app/core/colors/palette-gradient.css") !!}
     {!! Html::style("assets/css/nouislider/noui-slider.css") !!}
     {!! Html::style("assets/css/nouislider/palette-noui.css") !!}
+    {!! Html::style("assets/css/sweetalert2/sweetalert2.min.css") !!}
     <!-- END Page Level CSS-->
 
     <!-- BEGIN Custom CSS-->
@@ -529,6 +530,7 @@
 {!! Html::script("assets/js/nouislider/nouislider.min.js") !!}
 {!! Html::script("assets/js/UbaPlayer/jquery.ubaplayer.min.js") !!}
 {!! Html::script("assets/js/webui-popover/jquery.webui-popover.min.js") !!}
+{!! Html::script("assets/js/sweetalert2/sweetalert2.min.js") !!}
 <!-- END PAGE VENDOR JS-->
 
 <!-- BEGIN STACK JS-->
