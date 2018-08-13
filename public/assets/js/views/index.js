@@ -37,8 +37,9 @@ $(document).ready(function(){
         });
 
         sliders[i].noUiSlider.on("start", function () {
-            const div = document.getElementById(`s${i + 1}`);
-            div.classList.remove("slider-blue-grey");
+            const div = $(`#s${i + 1}`); // document.getElementById(`s${i + 1}`);
+            div.removeClass("slider-blue-grey"); //classList.remove("slider-blue-grey");
+            div.parent().parent().removeClass("bg-danger bg-lighten-4");
         });
     }
 
@@ -59,10 +60,25 @@ $(document).ready(function(){
     $("#info-q3").webuiPopover({title:"Title"});
 
     $("#submit").click(function (e) {
-        e.preventDefault();
 
-       sliders.forEach(function (s) {
-           console.log(s.noUiSlider.get());
-       });
+        // Checking if there are sliders that have not yet been moved
+        let unmoved_sliders = $("div.slider-blue-grey").length;
+        
+        if(unmoved_sliders !== 0){
+            swal({
+                title: "You have not finished yet!",
+                text: `There are ${unmoved_sliders} sliders that have not yet been moved`,
+                type: "warning",
+                showConfirmButton: true,
+                onClose: function () {
+                    $("div.slider-blue-grey").parent().parent().addClass("bg-danger bg-lighten-4");
+                }
+            });
+            e.preventDefault();
+        }
+
+        sliders.forEach(function (s) {
+           //console.log(s.noUiSlider.get());
+        });
     });
 });
