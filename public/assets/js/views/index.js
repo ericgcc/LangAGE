@@ -23,7 +23,7 @@ $(document).ready(function(){
         sliders[i] = document.getElementById(`s${i+1}`);
 
         noUiSlider.create(sliders[i], {
-            start: 49,
+            start: 50.5,
             behaviour: "snap",
             range: {
                 "min": 0,
@@ -31,7 +31,7 @@ $(document).ready(function(){
             },
             pips: {
 				mode: "positions",
-				values: [49],
+				values: [50.5],
 				density: 100				
 			}
         });
