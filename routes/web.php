@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('index');
 })->middleware('basicAuth');
+
+Route::post('ratings/store', [
+    'uses' => 'RatingController@store',
+    'as' => 'ratings.store',
+    'middleware' => ['basicAuth'],
+    'where' => [],
+    'domain' => NULL,
+]);

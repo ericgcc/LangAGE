@@ -9,6 +9,7 @@
     <meta name="keywords"
           content="admin template, stack admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
+    <meta name="_token" content="{{ csrf_token() }}">
     <title>LangAge Evaluation</title>
     <link rel="apple-touch-icon" href="{!! asset("assets/images/ico/apple-icon-120.png") !!}">
     <link rel="shortcut icon" type="image/x-icon" href="{!! asset("assets/images/ico/favicon.ico") !!}">
@@ -493,7 +494,7 @@
                                         <div class="form-actions right">
                                             <div class="row">
                                                 <div class="col-xl-11 col-lg-11 col-md-11 mb-11 button-set">
-                                                    <button type="button" class="btn btn-warning mr-1">
+                                                    <button type="button" class="btn btn-warning mr-1" id="save">
                                                         <i class="fa fa-save"></i> Save
                                                     </button>
                                                     <button type="submit" class="btn btn-primary" id="submit">
@@ -541,6 +542,7 @@
 
 <!-- BEGIN PAGE LEVEL JS-->
 {!! Html::script("assets/js/views/index.js") !!}
+
 <!-- END PAGE LEVEL JS-->
 </body>
 </html>

@@ -70,3 +70,7 @@ form.form-custom-bordered .row > div:first-child, form.form-custom-bordered .row
 .noUi-pips.noUi-pips-horizontal > .noUi-marker.noUi-marker-horizontal.noUi-marker-large{
     height: 0.5rem;
 }
+
+button[disabled] {
+    cursor:not-allowed;
+}
