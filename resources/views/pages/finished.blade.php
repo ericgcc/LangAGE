@@ -2,4 +2,4 @@
 
 @section('title', 'Evaluation finished')
 
-@section('message', 'You have already completed the evaluation')
+@section('message', 'You have already finished the evaluation')
