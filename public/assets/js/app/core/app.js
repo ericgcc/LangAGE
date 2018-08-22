@@ -173,7 +173,7 @@
         canvasHeight = chartjsDiv.children('canvas').attr('height');
         chartjsDiv.css('height', canvasHeight);
 
-        if($body.hasClass('boxed-layout')){
+        if($body.hasClass('boxed-layouts')){
             if($body.hasClass('vertical-overlay-menu')){
                var menuWidth= $('.main-menu').width();
                var contentPosition = $('.app-content').position().left;

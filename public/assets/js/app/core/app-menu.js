@@ -107,7 +107,7 @@
         }
       }
       else{
-        // For 1 column layout menu won't be initialized so initiate drill down for mega menu
+        // For 1 column layouts menu won't be initialized so initiate drill down for mega menu
 
         // Drill down menu
         // ------------------------------
@@ -180,7 +180,7 @@
         this.toOverlayMenu(currentBreakpoint.name);
       }
 
-      if($body.is('.horizontal-layout') && !$body.hasClass('.horizontal-menu-demo')){
+      if($body.is('.horizontal-layouts') && !$body.hasClass('.horizontal-menu-demo')){
         this.changeMenu(currentBreakpoint.name);
 
         $('.menu-toggle').removeClass('is-active');
@@ -332,7 +332,7 @@
 
       callback1.call(menuObj);
 
-      if($body.hasClass('vertical-layout')){
+      if($body.hasClass('vertical-layouts')){
         if($body.hasClass('menu-open') || $body.hasClass('menu-expanded')){
           $('.menu-toggle').addClass('is-active');
 
@@ -507,7 +507,7 @@
       if(screen == 'sm' || screen == 'xs'){
 
         // Change body classes
-        $body.removeClass($body.data('menu')).addClass('vertical-layout vertical-overlay-menu fixed-navbar');
+        $body.removeClass($body.data('menu')).addClass('vertical-layouts vertical-overlay-menu fixed-navbar');
 
         // Add navbar-fix-top class on small screens
         $('nav.header-navbar').addClass('fixed-top');
@@ -559,7 +559,7 @@
       }
       else{
         // Change body classes
-        $body.removeClass('vertical-layout vertical-overlay-menu fixed-navbar').addClass($body.data('menu'));
+        $body.removeClass('vertical-layouts vertical-overlay-menu fixed-navbar').addClass($body.data('menu'));
 
         // Remove navbar-fix-top class on large screens
         $('nav.header-navbar').removeClass('fixed-top');

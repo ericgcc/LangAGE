@@ -60,7 +60,7 @@
 <div class="app-content content">
     <div class="content-wrapper">
         <div class="content-body">
-            <!-- Basic form layout section start -->
+            <!-- Basic form layouts section start -->
             <section id="basic-form-layouts">
                 <div class="row">
                     <div class="col-md-12">
@@ -511,7 +511,7 @@
                     </div>
                 </div>
             </section>
-            <!-- // Basic form layout section end -->
+            <!-- // Basic form layouts section end -->
         </div>
     </div>
 </div>

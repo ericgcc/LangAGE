@@ -57,7 +57,7 @@ html {
     text-align: center; } }
 
 /*
-* Col 3 layout for detached and general type
+* Col 3 layouts for detached and general type
 */
 @media (min-width: 992px) {
   body .content-right {
