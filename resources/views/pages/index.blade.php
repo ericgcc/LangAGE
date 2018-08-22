@@ -20,6 +20,7 @@
     {!! Html::style("assets/css/nouislider/nouislider.min.css") !!}
     {!! Html::style("assets/css/UbaPlayer/ubaplayer.css") !!}
     {!! Html::style("assets/css/webui-popover/jquery.webui-popover.min.css") !!}
+    {!! Html::style("assets/css/hopscotch/hopscotch.css") !!}
     <!-- END VENDOR CSS-->
 
     <!-- BEGIN STACK CSS-->
@@ -69,10 +70,10 @@
                                 <div class="card-body">
                                     <div class="row questions">
                                         <div class="col-xl-3 col-lg-3 col-md-3 mb-3 col offset-2">
-                                            <div class="card border-blue-grey">
+                                            <div id="hs-t-question-1" class="card border-blue-grey">
                                                 <div class="card-header">
                                                     <h2 class="text-bold-600 text-center">Question 1</h2>
-                                                    <div class="heading-elements">
+                                                    <div id="hs-t-details" class="heading-elements">
                                                         <ul class="list-inline mb-0">
                                                             <li>
                                                                 <a>
@@ -150,7 +151,7 @@
                                                 <div id="ubaplayer"></div>
                                                 <ul class="ubaplayer-controls">
                                                     <li>
-                                                        <a class="ubaplayer-button" href="{!! asset("assets/tracks/1_a053_début.mp3") !!}"></a>
+                                                        <a id="hs-t-player" class="ubaplayer-button" href="{!! asset("assets/tracks/1_a053_début.mp3") !!}"></a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -158,7 +159,7 @@
                                                 <fieldset class="form-group slider">
                                                 </fieldset>
                                             </div>
-                                            <div class="col-xl-3 col-lg-3 col-md-3 mb-3">
+                                            <div id="hs-t-sliders-1" class="col-xl-3 col-lg-3 col-md-3 mb-3">
                                                 <fieldset class="form-group slider">
                                                 </fieldset>
                                             </div>
@@ -532,6 +533,7 @@
 {!! Html::script("assets/js/UbaPlayer/jquery.ubaplayer.min.js") !!}
 {!! Html::script("assets/js/webui-popover/jquery.webui-popover.min.js") !!}
 {!! Html::script("assets/js/sweetalert2/sweetalert2.min.js") !!}
+{!! Html::script("assets/js/hopscotch/hopscotch.min.js") !!}
 <!-- END PAGE VENDOR JS-->
 
 <!-- BEGIN STACK JS-->
@@ -544,10 +546,9 @@
 <script type="text/javascript">
     let current = '{!! $sliders !!}'.replace(/[\[\]"]+/g,'');
     current = current !== '' ? current.split(',') : null;
+    let timestamp = '{{$last_login}}';
 </script>
-{!! Html::script("assets/js/views/index.js") !!}
-
-
+{!! Html::script("assets/js/views/pages/index.js") !!}
 <!-- END PAGE LEVEL JS-->
 </body>
 </html>

@@ -9,6 +9,67 @@
 ==========================================================================================*/
 const number_of_questions = 3;
 const number_of_tracks = 15;
+
+// Define the tour!
+const tour = {
+    id: "LangAge-Evaluation",
+    steps: [
+        {
+            title: "Questions",
+            content: "These are the questions you must evaluate for each recording.",
+            target: "hs-t-question-1",
+            placement: "bottom",
+
+
+        },
+        {
+            title: "Details",
+            content: "If you have any doubt about the questions, you can click here for more details.",
+            target: "hs-t-details",
+            placement: "right",
+            yOffset: -20
+        },
+        {
+            title: "Player controls",
+            content: "Click each control to play the corresponding recording.",
+            target: "hs-t-player",
+            placement: "top",
+            xOffset: -25
+        },
+        {
+            title: "Sliders",
+            content: "Use the sliders to evaluate each recording conforming to the question. " +
+                "<b>Note that the sliders begin in the middle and are grey if you haven't moved yet. When you moved the sliders, they turn green</b>.",
+            target: "hs-t-sliders-1",
+            placement: "top",
+        },
+        {
+            title: "Sliders",
+            content: "If you want let the slider in the middle, just click on it.",
+            target: "hs-t-sliders-1",
+            placement: "bottom",
+            arrowOffset: "center",
+            xOffset: 64
+        },
+        {
+            title: "Save for later",
+            content: "You can save the current status of your evaluations, and  continue later.",
+            target: "save",
+            placement: "top"
+        },
+        {
+            title: "Submit your evaluations",
+            content: "When you have moved all the sliders, you can submit the evaluations. This will finish the process and you won't be able to do modifications anymore.",
+            target: "submit",
+            placement: "top",
+            arrowOffset: 60,
+            xOffset: -60
+        }
+    ],
+    showPrevButton: true,
+    showCloseButton: false,
+};
+
 $(document).ready(function(){
 
     /********************************************
@@ -231,4 +292,6 @@ $(document).ready(function(){
             }, 1000);
         });
     });
+
+    if(timestamp === '') hopscotch.startTour(tour);
 });
