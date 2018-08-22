@@ -101,6 +101,7 @@ $(document).ready(function(){
             data: {
                 _token: $('meta[name="_token"]').attr('content'),
                 ratings: ratings,
+                finished: true,
                 number_of_questions: number_of_questions,
                 number_of_tracks: number_of_tracks
             },
@@ -112,7 +113,7 @@ $(document).ready(function(){
                 button.children().removeClass("fa-save");
                 button.children().addClass("fa-ellipsis-h");
             }
-        }).done(function () {
+        }).done(function (data) {
 
             if(data === "true"){
                 const button =  $("#submit");
@@ -122,7 +123,7 @@ $(document).ready(function(){
                 button.addClass("btn-success");
                 swal({
                     title: "Thanks!",
-                    text: "The survey has been completed",
+                    text: "The evaluation has been completed",
                     type: "success",
                     showConfirmButton: false,
                     timer: 3000,
@@ -187,6 +188,7 @@ $(document).ready(function(){
             data: {
                 _token: $('meta[name="_token"]').attr('content'),
                 ratings: ratings,
+                finished: false,
                 number_of_questions: number_of_questions,
                 number_of_tracks: number_of_tracks
             },
