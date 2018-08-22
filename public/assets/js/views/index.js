@@ -34,14 +34,14 @@ $(document).ready(function(){
             },
             pips: {
 				mode: "positions",
-				values: [50.5],
-				density: 101
+				values: [50],
+				density: 100
 			}
         });
 
         sliders[i].noUiSlider.on("start", function () {
-            const div = $(`#s${i + 1}`); // document.getElementById(`s${i + 1}`);
-            div.removeClass("slider-blue-grey"); //classList.remove("slider-blue-grey");
+            const div = $(`#s${i + 1}`);
+            div.removeClass("slider-blue-grey");
             div.parent().parent().removeClass("bg-danger bg-lighten-4");
         });
     }
@@ -175,31 +175,42 @@ $(document).ready(function(){
                 number_of_tracks: number_of_tracks
             },
             beforeSend: function () {
-                // Disable button
                 const button =  $("#save");
                 button.prop('disabled', true);
                 button.addClass("disabled");
-                button.children().removeClass("fa-save").addClass("fa-ellipsis-h");
-            },
-            success: function () {
+
+                button.children().removeClass("fa-save");
+                button.children().addClass("fa-ellipsis-h");
+            }
+        }).done(function () {
+            const button =  $("#save");
+            button.children().removeClass("fa-ellipsis-h");
+            button.children().addClass("fa-check");
+
+            button.removeClass("btn-warning");
+            button.addClass("btn-success");
+        }).fail(function () {
+            const button =  $("#save");
+            button.children().removeClass("fa-ellipsis-h");
+            button.children().addClass("fa-times");
+
+            button.removeClass("btn-warning");
+            button.addClass("btn-danger");
+        }).always(function () {
+            window.setTimeout(function(){
                 const button =  $("#save");
-                button.children().removeClass("fa-ellipsis-h").addClass("fa-check");
-                button.removeClass("btn-warning").addClass("btn-success");
-            },
-            error: function () {
-                const button =  $("#save");
-                button.children().removeClass("fa-ellipsis-h").addClass("fa-times");
-                button.removeClass("btn-warning").addClass("btn-danger");
-            },
-            complete: setTimeout(function () {
-                const button =  $("#save");
+
+                if(button.hasClass("btn-success")) button.removeClass("btn-success");
+                if(button.hasClass("btn-danger")) button.removeClass("btn-danger");
+                button.addClass("btn-warning");
+
                 button.removeAttr("disabled");
                 button.removeClass("disabled");
-                button.removeClass("btn-success").addClass("btn-warning");
-                button.removeClass("btn-danger").addClass("btn-warning");
-                button.children().removeClass("fa-check").addClass("fa-save");
-                button.children().removeClass("fa-times").addClass("fa-save");
-            }, 2000)
+
+                button.children().removeClass("fa-check");
+                button.children().removeClass("fa-times");
+                button.children().addClass("fa-save");
+            }, 2000);
         });
     });
 });
