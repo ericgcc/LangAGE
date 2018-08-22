@@ -541,7 +541,12 @@
 <!-- END STACK JS-->
 
 <!-- BEGIN PAGE LEVEL JS-->
+<script type="text/javascript">
+    let current = '{!! $sliders !!}'.replace(/[\[\]"]+/g,'');
+    current = current !== '' ? current.split(',') : null;
+</script>
 {!! Html::script("assets/js/views/index.js") !!}
+
 
 <!-- END PAGE LEVEL JS-->
 </body>

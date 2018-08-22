@@ -9,6 +9,17 @@ use Illuminate\Support\Facades\DB;
 
 class RatingController extends Controller
 {
+
+    public function index(){
+
+        $sliders = Rating::where('user_id', Auth::id())
+                            ->orderBy('track_id')
+                            ->orderBy('question_id')
+                            ->pluck('rating');
+
+        return view('index', ['sliders' => $sliders]);
+    }
+
     public function store(Request $request){
         $ratings =  $request->input("ratings");
         $number_of_questions =  $request->input("number_of_questions");

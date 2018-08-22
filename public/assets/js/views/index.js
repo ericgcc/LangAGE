@@ -39,6 +39,11 @@ $(document).ready(function(){
 			}
         });
 
+        if(current && current[i] !== 'null'){
+            sliders[i]. noUiSlider.set(current[i]);
+            sliders[i].classList.remove("slider-blue-grey");
+        }
+
         sliders[i].noUiSlider.on("start", function () {
             const div = $(`#s${i + 1}`);
             div.removeClass("slider-blue-grey");
@@ -67,7 +72,7 @@ $(document).ready(function(){
 
         // Checking if there are sliders that have not yet been moved
         let unmoved_sliders = $("div.slider-blue-grey").length;
-        
+
         if(unmoved_sliders !== 0){
             swal({
                 title: "You have not finished yet!",
@@ -100,55 +105,66 @@ $(document).ready(function(){
                 number_of_tracks: number_of_tracks
             },
             beforeSend: function () {
-                // Disable button
                 const button =  $("#submit");
                 button.prop('disabled', true);
                 button.addClass("disabled");
-                button.children().removeClass("fa-save").addClass("fa-ellipsis-h");
-            },
-            success: function (data) {
-                if(data === "true"){
-                    const button =  $("#submit");
-                    button.children().removeClass("fa-ellipsis-h").addClass("fa-check");
-                    button.removeClass("btn-primary").addClass("btn-success");
 
-                    swal({
-                        title: "Thanks!",
-                        text: "The survey has been completed",
-                        type: "success",
-                        showConfirmButton: false,
-                        timer: 3000,
-                        onClose: function () {
-                            location.reload();
-                        }
-                    });
-                }else{
-                    const button =  $("#submit");
-                    button.children().removeClass("fa-ellipsis-h").addClass("fa-times");
-                    button.removeClass("btn-primary").addClass("btn-danger");
+                button.children().removeClass("fa-save");
+                button.children().addClass("fa-ellipsis-h");
+            }
+        }).done(function () {
 
-                    swal({
-                        title: "Oh no!",
-                        text: data,
-                        type: "error",
-                        showConfirmButton: true
-                    });
-                }
-            },
-            error: function () {
+            if(data === "true"){
                 const button =  $("#submit");
-                button.children().removeClass("fa-ellipsis-h").addClass("fa-times");
-                button.removeClass("btn-primary").addClass("btn-danger");
-            },
-            complete: setTimeout(function () {
+                button.children().removeClass("fa-ellipsis-h");
+                button.children().addClass("fa-check");
+                button.removeClass("btn-primary");
+                button.addClass("btn-success");
+                swal({
+                    title: "Thanks!",
+                    text: "The survey has been completed",
+                    type: "success",
+                    showConfirmButton: false,
+                    timer: 3000,
+                    onClose: function () {
+                        location.reload();
+                    }
+                });
+            }else{
                 const button =  $("#submit");
+                button.children().removeClass("fa-ellipsis-h");
+                button.children().addClass("fa-times");
+                button.removeClass("btn-primary");
+                button.addClass("btn-danger");
+
+                swal({
+                    title: "Oh no!",
+                    text: data,
+                    type: "error",
+                    showConfirmButton: true
+                });
+            }
+        }).fail(function () {
+            const button =  $("#submit");
+            button.children().removeClass("fa-ellipsis-h");
+            button.children().addClass("fa-times");
+            button.removeClass("btn-primary");
+            button.addClass("btn-danger");
+        }).always(function () {
+            window.setTimeout(function () {
+                const button = $("#submit");
+
+                if (button.hasClass("btn-success")) button.removeClass("btn-success");
+                if (button.hasClass("btn-danger")) button.removeClass("btn-danger");
+                button.addClass("btn-primary");
+
                 button.removeAttr("disabled");
                 button.removeClass("disabled");
-                button.removeClass("btn-success").addClass("btn-primary");
-                button.removeClass("btn-danger").addClass("btn-primary");
-                button.children().removeClass("fa-check").addClass("fa-save");
-                button.children().removeClass("fa-times").addClass("fa-save");
-            }, 2000)
+
+                button.children().removeClass("fa-check");
+                button.children().removeClass("fa-times");
+                button.children().addClass("fa-save");
+            }, 1000);
         });
     });
 
@@ -210,7 +226,7 @@ $(document).ready(function(){
                 button.children().removeClass("fa-check");
                 button.children().removeClass("fa-times");
                 button.children().addClass("fa-save");
-            }, 2000);
+            }, 1000);
         });
     });
 });
