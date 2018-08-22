@@ -10,7 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', 'RatingController@index')
+        ->middleware('basicAuth')
+        ->name('home');
 
-Route::get('/', function () {
-    return view('index');
-})->middleware('basicAuth');
+Route::post('store', 'RatingController@store')
+    ->middleware('basicAuth')
+    ->prefix('ratings')
+    ->name('store');
