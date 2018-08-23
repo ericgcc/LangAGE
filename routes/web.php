@@ -14,6 +14,10 @@ Route::get('/', 'RatingController@index')
         ->middleware('basicAuth')
         ->name('home');
 
+Route::get('mobile', function (){
+    return view('pages.mobile');
+});
+
 Route::post('store', 'RatingController@store')
     ->middleware('basicAuth')
     ->prefix('ratings')
