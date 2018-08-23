@@ -1,5 +1,5 @@
 @extends('layouts.messages')
 
-@section('title', 'Go to desktop')
+@section('title', 'Allez sur le bureau')
 
-@section('message', 'You should use this app from a desktop browser')
+@section('message', "Vous devez utiliser cette application à partir d'un navigateur de bureau")

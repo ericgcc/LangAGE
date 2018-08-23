@@ -1,5 +1,5 @@
 @extends('layouts.messages')
 
-@section('title', 'Evaluation finished')
+@section('title', 'Évaluation termié')
 
-@section('message', 'You have already finished the evaluation')
+@section('message', "Vous avez déjà fini l'évaluation")

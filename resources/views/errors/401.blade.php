@@ -1,5 +1,5 @@
 @extends('errors::layout')
 
-@section('title', 'Invalid credentials')
+@section('title', "Informations d'identification invalides")
 
-@section('message', 'Sorry, the specified user/password is not valid.')
+@section('message', "Désolé, l'utilisateur / mot de passe spécifié n'est pas valide.")
