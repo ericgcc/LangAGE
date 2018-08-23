@@ -72,6 +72,9 @@ const tour = {
 
 $(document).ready(function(){
 
+    if(jQuery.browser.mobile)
+        window.location = 'mobile';
+
     /********************************************
      *                Slider values             *
      ********************************************/

@@ -534,6 +534,7 @@
 {!! Html::script("assets/js/webui-popover/jquery.webui-popover.min.js") !!}
 {!! Html::script("assets/js/sweetalert2/sweetalert2.min.js") !!}
 {!! Html::script("assets/js/hopscotch/hopscotch.min.js") !!}
+{!! Html::script("assets/js/app/detectmobilebrowser.js") !!}
 <!-- END PAGE VENDOR JS-->
 
 <!-- BEGIN STACK JS-->
