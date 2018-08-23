@@ -3,14 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Rating;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Models\Rating;
 use Illuminate\Support\Facades\DB;
 
 class RatingController extends Controller
 {
-
     public function index()
     {
         $status = User::where('id', Auth::id())
@@ -19,13 +18,15 @@ class RatingController extends Controller
 
         if($status) return view('pages.finished');
 
-
         $sliders = Rating::where('user_id', Auth::id())
             ->orderBy('track_id')
             ->orderBy('question_id')
             ->pluck('rating');
 
-        return view('pages.index', ['sliders' => $sliders]);
+        $data = ['sliders' => $sliders, 'stamp' => session('last_login', NULL)];
+        session(['last_login' => User::find(Auth::id())->pluck('last_login')->first()]);
+
+        return view('pages.index', $data);
     }
 
     public function store(Request $request)
