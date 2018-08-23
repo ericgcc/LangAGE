@@ -10,7 +10,7 @@
           content="admin template, stack admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
     <meta name="_token" content="{{ csrf_token() }}">
-    <title>LangAge Evaluation</title>
+    <title>Évaluation LangAge</title>
     <link rel="apple-touch-icon" href="{!! asset("assets/images/ico/apple-icon-120.png") !!}">
     <link rel="shortcut icon" type="image/x-icon" href="{!! asset("assets/images/ico/favicon.ico") !!}">
     {!! Html::style("https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i%7COpen+Sans:300,300i,400,400i,600,600i,700,700i") !!}
@@ -50,7 +50,7 @@
                     <a class="navbar-brand" href="index.blade.php">
                         <img class="brand-logo" alt="stack admin logo"
                              src="{!! asset("assets/images/logo/stack-logo-light.png") !!}">
-                        <h2 class="brand-text">LangAge Evaluation</h2>
+                        <h2 class="brand-text">Évaluation LangAge</h2>
                     </a>
                 </li>
             </ul>
@@ -496,10 +496,10 @@
                                             <div class="row">
                                                 <div class="col-xl-11 col-lg-11 col-md-11 mb-11 button-set">
                                                     <button type="button" class="btn btn-warning mr-1" id="save">
-                                                        <i class="fa fa-save"></i> Save
+                                                        <i class="fa fa-save"></i> Enregistrer
                                                     </button>
                                                     <button type="submit" class="btn btn-primary" id="submit">
-                                                        <i class="fa fa-check-square-o"></i> Submit
+                                                        <i class="fa fa-check-square-o"></i> Soumettre
                                                     </button>
                                                 </div>
                                                 <div class="col-xl-1 col-lg-1 col-md-1 mb-1 button-set"></div>

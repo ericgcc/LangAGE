@@ -16,50 +16,49 @@ const tour = {
     steps: [
         {
             title: "Questions",
-            content: "These are the questions you must evaluate for each recording.",
+            content: "Ce sont les questions que vous devez évaluer pour chaque enregistrement.",
             target: "hs-t-question-1",
             placement: "bottom",
 
 
         },
         {
-            title: "Details",
-            content: "If you have any doubt about the questions, you can click here for more details.",
+            title: "Détails",
+            content: "Si vous avez des doutes sur les questions, vous pouvez cliquer ici pour en savoir plus.",
             target: "hs-t-details",
-            placement: "right",
-            yOffset: -20
+            placement: "right",yOffset: -20
         },
         {
-            title: "Player controls",
-            content: "Click each control to play the corresponding recording.",
+            title: "Lecteurs audio",
+            content: "Cliquez sur chaque contrôle pour écouter l'enregistrement correspondant.",
             target: "hs-t-player",
             placement: "top",
             xOffset: -25
         },
         {
             title: "Sliders",
-            content: "Use the sliders to evaluate each recording conforming to the question. " +
-                "<b>Note that the sliders begin in the middle and are grey if you haven't moved yet. When you moved the sliders, they turn green</b>.",
+            content: "Utilisez les sliders pour évaluer chaque enregistrement conformément à la question. " +
+                "<b>Notez que les sliders commencent au milieu et sont gris si vous ne les avez pas encore bougé. Lorsque vous déplacez les sliders, ils deviennent verts</b>.",
             target: "hs-t-sliders-1",
             placement: "top",
         },
         {
             title: "Sliders",
-            content: "If you want let the slider in the middle, just click on it.",
+            content: "Si vous voulez laisser le slider au milieu, cliquez simplement dessus.",
             target: "hs-t-sliders-1",
             placement: "bottom",
             arrowOffset: "center",
             xOffset: 64
         },
         {
-            title: "Save for later",
-            content: "You can save the current status of your evaluations, and  continue later.",
+            title: "Enregistrer pour plus tard",
+            content: "Vous pouvez enregistrer l'état actuel de vos évaluations et continuer plus tard.",
             target: "save",
             placement: "top"
         },
         {
-            title: "Submit your evaluations",
-            content: "When you have moved all the sliders, you can submit the evaluations. This will finish the process and you won't be able to do modifications anymore.",
+            title: "Soumettez vos évaluations",
+            content: "Lorsque vous avez bougé tous les sliders, vous pouvez soumettre les évaluations. Cela terminera le processus et vous ne pourrez plus faire de modifications.",
             target: "submit",
             placement: "top",
             arrowOffset: 60,
@@ -67,7 +66,13 @@ const tour = {
         }
     ],
     showPrevButton: true,
-    showCloseButton: false
+    showCloseButton: false,
+    i18n: {
+        nextBtn: "Suivant",
+        prevBtn: "Précédent",
+        doneBtn: "Terminer"
+    },
+    scrollDuration: 750
 };
 
 $(document).ready(function(){
@@ -127,9 +132,9 @@ $(document).ready(function(){
         }else $(".row").removeClass("border-primary");
     });
 
-    $("#info-q1").webuiPopover({title:"Title"});
-    $("#info-q2").webuiPopover({title:"Title"});
-    $("#info-q3").webuiPopover({title:"Title"});
+    $("#info-q1").webuiPopover({title:"Titre"});
+    $("#info-q2").webuiPopover({title:"Titre"});
+    $("#info-q3").webuiPopover({title:"Titre"});
 
     $("#submit").click(function (e) {
         e.preventDefault();
@@ -139,8 +144,8 @@ $(document).ready(function(){
 
         if(unmoved_sliders !== 0){
             swal({
-                title: "You have not finished yet!",
-                text: `There are ${unmoved_sliders} sliders that have not yet been moved`,
+                title: "Vous n'avez pas encore fini !",
+                text: `Il y a ${unmoved_sliders} sliders qui n'ont pas encore été bougés`,
                 type: "warning",
                 showConfirmButton: true,
                 onClose: function () {
@@ -170,12 +175,16 @@ $(document).ready(function(){
                 number_of_tracks: number_of_tracks
             },
             beforeSend: function () {
-                const button =  $("#submit");
-                button.prop('disabled', true);
-                button.addClass("disabled");
+                const submit =  $("#submit");
+                const save =  $("#save");
 
-                button.children().removeClass("fa-save");
-                button.children().addClass("fa-ellipsis-h");
+                submit.prop('disabled', true);
+                submit.addClass("disabled");
+                save.prop('disabled', true);
+                save.addClass("disabled");
+
+                submit.children().removeClass("fa-save");
+                submit.children().addClass("fa-ellipsis-h");
             }
         }).done(function (data) {
 
@@ -186,8 +195,8 @@ $(document).ready(function(){
                 button.removeClass("btn-primary");
                 button.addClass("btn-success");
                 swal({
-                    title: "Thanks!",
-                    text: "The evaluation has been completed",
+                    title: "Merci !",
+                    text: "L'évaluation est terminée",
                     type: "success",
                     showConfirmButton: false,
                     timer: 3000,
@@ -203,7 +212,7 @@ $(document).ready(function(){
                 button.addClass("btn-danger");
 
                 swal({
-                    title: "Oh no!",
+                    title: "Oh non !",
                     text: data,
                     type: "error",
                     showConfirmButton: true
@@ -217,18 +226,21 @@ $(document).ready(function(){
             button.addClass("btn-danger");
         }).always(function () {
             window.setTimeout(function () {
-                const button = $("#submit");
+                const submit = $("#submit");
+                const save =  $("#save");
 
-                if (button.hasClass("btn-success")) button.removeClass("btn-success");
-                if (button.hasClass("btn-danger")) button.removeClass("btn-danger");
-                button.addClass("btn-primary");
+                if (submit.hasClass("btn-success")) submit.removeClass("btn-success");
+                if (submit.hasClass("btn-danger")) submit.removeClass("btn-danger");
+                submit.addClass("btn-primary");
 
-                button.removeAttr("disabled");
-                button.removeClass("disabled");
+                submit.removeAttr("disabled");
+                submit.removeClass("disabled");
+                save.removeAttr("disabled");
+                save.removeClass("disabled");
 
-                button.children().removeClass("fa-check");
-                button.children().removeClass("fa-times");
-                button.children().addClass("fa-save");
+                submit.children().removeClass("fa-check");
+                submit.children().removeClass("fa-times");
+                submit.children().addClass("fa-save");
             }, 1000);
         });
     });
@@ -257,12 +269,16 @@ $(document).ready(function(){
                 number_of_tracks: number_of_tracks
             },
             beforeSend: function () {
-                const button =  $("#save");
-                button.prop('disabled', true);
-                button.addClass("disabled");
+                const save =  $("#save");
+                const submit =  $("#submit");
 
-                button.children().removeClass("fa-save");
-                button.children().addClass("fa-ellipsis-h");
+                save.prop('disabled', true);
+                save.addClass("disabled");
+                submit.prop('disabled', true);
+                submit.addClass("disabled");
+
+                save.children().removeClass("fa-save");
+                save.children().addClass("fa-ellipsis-h");
             }
         }).done(function () {
             const button =  $("#save");
@@ -280,18 +296,21 @@ $(document).ready(function(){
             button.addClass("btn-danger");
         }).always(function () {
             window.setTimeout(function(){
-                const button =  $("#save");
+                const save =  $("#save");
+                const submit =  $("#submit");
 
-                if(button.hasClass("btn-success")) button.removeClass("btn-success");
-                if(button.hasClass("btn-danger")) button.removeClass("btn-danger");
-                button.addClass("btn-warning");
+                if(save.hasClass("btn-success")) save.removeClass("btn-success");
+                if(save.hasClass("btn-danger")) save.removeClass("btn-danger");
+                save.addClass("btn-warning");
 
-                button.removeAttr("disabled");
-                button.removeClass("disabled");
+                save.removeAttr("disabled");
+                save.removeClass("disabled");
+                submit.removeAttr("disabled");
+                submit.removeClass("disabled");
 
-                button.children().removeClass("fa-check");
-                button.children().removeClass("fa-times");
-                button.children().addClass("fa-save");
+                save.children().removeClass("fa-check");
+                save.children().removeClass("fa-times");
+                save.children().addClass("fa-save");
             }, 1000);
         });
     });
