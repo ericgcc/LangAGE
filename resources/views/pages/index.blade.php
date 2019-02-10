@@ -70,7 +70,7 @@
                                 <div class="card-body">
                                     <div class="row questions">
                                         <div class="col-xl-3 col-lg-3 col-md-3 mb-3 col offset-2">
-                                            <div id="hs-t-question-1" class="card border-blue-grey">
+                                            <div id="hs-t-question-1" class="card border-blue-grey matchHeight-q">
                                                 <div class="card-header">
                                                     <h2 class="text-bold-600 text-center">Question 1</h2>
                                                     <div id="hs-t-details" class="heading-elements">
@@ -88,13 +88,13 @@
                                                 </div>
                                                 <div class="card-content">
                                                     <div class="card-body">
-                                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vestibulum sem in tortor dignissim porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue sollicitudin hendrerit. Quisque accumsan risus non nulla consequat, non porta arcu condimentum. Suspendisse nec odio et risus suscipit vestibulum. Quisque vehicula consectetur eros, quis tempus ipsum fermentum quis. Cras venenatis convallis vestibulum</p>
+                                                        <p class="card-text text-center">À quel point, le participant, est-il impliqué dans la situation ?</p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-xl-3 col-lg-3 col-md-3 mb-3">
-                                            <div class="card border-blue-grey">
+                                            <div class="card border-blue-grey matchHeight-q">
                                                 <div class="card-header">
                                                     <h2 class="text-bold-600 text-center">Question 2</h2>
                                                     <div class="heading-elements">
@@ -112,13 +112,13 @@
                                                 </div>
                                                 <div class="card-content">
                                                     <div class="card-body">
-                                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vestibulum sem in tortor dignissim porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue sollicitudin hendrerit. Quisque accumsan risus non nulla consequat, non porta arcu condimentum. Suspendisse nec odio et risus suscipit vestibulum. Quisque vehicula consectetur eros, quis tempus ipsum fermentum quis. Cras venenatis convallis vestibulum</p>
+                                                        <p class="card-text text-center">Combien se limite-t-il à exprimer ce qu'il veut dire ?</p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-xl-3 col-lg-3 col-md-3 mb-3">
-                                            <div class="card border-blue-grey">
+                                            <div class="card border-blue-grey matchHeight-q">
                                                 <div class="card-content">
                                                     <div class="card-header">
                                                         <h2 class="text-bold-600 text-center">Question 3</h2>
@@ -136,12 +136,17 @@
                                                         </div>
                                                     </div>
                                                     <div class="card-body">
-                                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vestibulum sem in tortor dignissim porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue sollicitudin hendrerit. Quisque accumsan risus non nulla consequat, non porta arcu condimentum. Suspendisse nec odio et risus suscipit vestibulum. Quisque vehicula consectetur eros, quis tempus ipsum fermentum quis. Cras venenatis convallis vestibulum</p>
+                                                        <p class="card-text text-center">Dans quelle mesure les réponses du participant sont-elles intéressantes/informatives ?</p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-xl-1 col-lg-1 col-md-1 mb-1"></div>
+                                        <div class="col-xl-1 col-lg-1 col-md-1 mb-1">
+                                            <button type="button" id="tour" class="btn btn-outline-primary round btn-min-width mr-1 mb-1 btn-sm">Démarrer le tour</button>
+                                            @if ($is_admin === 1)
+                                                <a class="btn btn-outline-primary round btn-min-width mr-1 mb-1 btn-sm" href="{{route('download')}}" role="button">Télécharger résultats</a>
+                                            @endif
+                                        </div>
                                     </div>
                                     {!! Form::open(['class' => 'form form-horizontal form-custom-bordered']) !!}
                                     {{--<form class="form form-horizontal form-custom-bordered">--}}
@@ -535,6 +540,7 @@
 {!! Html::script("assets/js/sweetalert2/sweetalert2.min.js") !!}
 {!! Html::script("assets/js/hopscotch/hopscotch.min.js") !!}
 {!! Html::script("assets/js/app/detectmobilebrowser.js") !!}
+{!! Html::script("assets/js/jquery.matchHeight/jquery.matchHeight.min.js") !!}
 <!-- END PAGE VENDOR JS-->
 
 <!-- BEGIN STACK JS-->

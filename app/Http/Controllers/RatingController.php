@@ -13,17 +13,17 @@ class RatingController extends Controller
     public function index()
     {
         $status = User::where('id', Auth::id())
-                    ->pluck('finished') // this return a Collection (array)
+                    ->select('finished', 'is_admin') // this return a Collection (array)
                     ->first(); // this return the single value
 
-        if($status) return view('pages.finished');
+        if($status->finished) return view('pages.finished');
 
         $sliders = Rating::where('user_id', Auth::id())
             ->orderBy('track_id')
             ->orderBy('question_id')
             ->pluck('rating');
 
-        $data = ['sliders' => $sliders, 'stamp' => session('last_login', NULL)];
+        $data = ['sliders' => $sliders, 'stamp' => session('last_login', NULL), 'is_admin' => $status->is_admin];
         session(['last_login' => User::find(Auth::id())->pluck('last_login')->first()]);
 
         return view('pages.index', $data);

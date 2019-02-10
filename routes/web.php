@@ -18,6 +18,15 @@ Route::get('mobile', function (){
     return view('pages.mobile');
 });
 
+Route::get('download', 'DownloadController@index')
+    ->middleware('basicAuth')
+    ->name('download');
+
+Route::get('export', 'DownloadController@export')
+    ->middleware('basicAuth')
+    ->name('export');
+
+
 Route::post('store', 'RatingController@store')
     ->middleware('basicAuth')
     ->prefix('ratings')

@@ -41,6 +41,24 @@ const tour = {
                 "<b>Notez que les sliders commencent au milieu et sont gris si vous ne les avez pas encore bougé. Lorsque vous déplacez les sliders, ils deviennent verts</b>.",
             target: "hs-t-sliders-1",
             placement: "top",
+            arrowOffset: "center",
+            xOffset: 64
+        },
+        {
+            title: "Sliders",
+            content: "Déplacer le slider vers la gauche signifie \"peu\".",
+            target: "hs-t-sliders-1",
+            placement: "left",
+            yOffset: -11,
+            xOffset: 11
+        },
+        {
+            title: "Sliders",
+            content: "Déplacer le slider vers la droite signifie \"beaucoup\".",
+            target: "hs-t-sliders-1",
+            placement: "right",
+            yOffset: -11,
+            xOffset: -11
         },
         {
             title: "Sliders",
@@ -67,10 +85,12 @@ const tour = {
     ],
     showPrevButton: true,
     showCloseButton: false,
+    showSkip: true,
     i18n: {
         nextBtn: "Suivant",
         prevBtn: "Précédent",
-        doneBtn: "Terminer"
+        doneBtn: "Terminer",
+        skipBtn: "Quitter"
     },
     scrollDuration: 750
 };
@@ -79,6 +99,8 @@ $(document).ready(function(){
 
     if(jQuery.browser.mobile)
         window.location = 'mobile';
+
+    $('.matchHeight-q').matchHeight();
 
     /********************************************
      *                Slider values             *
@@ -315,6 +337,9 @@ $(document).ready(function(){
         });
     });
 
-    if(stamp === '')
+    if(stamp === '') hopscotch.startTour(tour);
+    $("#tour").click(function () {
         hopscotch.startTour(tour);
+    })
+
 });
