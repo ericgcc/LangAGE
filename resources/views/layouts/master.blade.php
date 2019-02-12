@@ -70,13 +70,7 @@
                     <span>Démarrer le tour</span>
                 </a>
             </li>
-            @yield('download-nav')
-            {{--<li class="nav-item">--}}
-                {{--<a class="nav-link" href="{{route('download')}}">--}}
-                    {{--<i class="icon-cloud-download"></i>--}}
-                    {{--<span>Télécharger résultats</span>--}}
-                {{--</a>--}}
-            {{--</li>--}}
+            @yield('admin-navs')
         </ul>
     </div>
     <!-- /horizontal menu content-->
