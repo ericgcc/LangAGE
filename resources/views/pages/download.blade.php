@@ -23,7 +23,7 @@
     <!-- END STACK CSS-->
 
     <!-- BEGIN Page Level CSS-->
-    {!! Html::style("assets/css/app/core/menu/horizontal-menu.css") !!}
+    {!! Html::style("app-assets") !!}
     {!! Html::style("assets/css/app/core/colors/palette-gradient.css") !!}
     <!-- END Page Level CSS-->
     <!-- BEGIN Custom CSS-->
