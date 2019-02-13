@@ -12,15 +12,13 @@ const number_of_tracks = 15;
 
 // Define the tour!
 const tour = {
-    id: "LangAge-Evaluation",
+    id: "LangAge",
     steps: [
         {
             title: "Questions",
             content: "Ce sont les questions que vous devez évaluer pour chaque enregistrement.",
             target: "hs-t-question-1",
             placement: "bottom",
-
-
         },
         {
             title: "Détails",
@@ -100,7 +98,9 @@ $(document).ready(function(){
     if(jQuery.browser.mobile)
         window.location = 'mobile';
 
-    $('.matchHeight-q').matchHeight();
+    $('.question').matchHeight({
+        byRow: false
+    });
 
     /********************************************
      *                Slider values             *
@@ -153,10 +153,6 @@ $(document).ready(function(){
             div.addClass("border-primary");
         }else $(".row").removeClass("border-primary");
     });
-
-    $("#info-q1").webuiPopover({title:"Quoi évaluer ?"});
-    $("#info-q2").webuiPopover({title:"Quoi évaluer?"});
-    $("#info-q3").webuiPopover({title:"Quoi évaluer?"});
 
     $("#submit").click(function (e) {
         e.preventDefault();
@@ -340,6 +336,30 @@ $(document).ready(function(){
     if(stamp === '') hopscotch.startTour(tour);
     $("#tour").click(function () {
         hopscotch.startTour(tour);
-    })
+    });
+
+    $("#q1-card").flip({
+        trigger: 'manual'
+    });
+
+    $(".q1-btn").click(function (){
+        $("#q1-card").flip('toggle');
+    });
+
+    $("#q2-card").flip({
+        trigger: 'manual'
+    });
+
+    $(".q2-btn").click(function (){
+        $("#q2-card").flip('toggle');
+    });
+
+    $("#q3-card").flip({
+        trigger: 'manual'
+    });
+
+    $(".q3-btn").click(function (){
+        $("#q3-card").flip('toggle');
+    });
 
 });

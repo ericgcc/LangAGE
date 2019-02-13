@@ -59,22 +59,22 @@
 
 
 <!-- Horizontal navigation-->
-<div class="header-navbar navbar-expand-sm navbar navbar-horizontal navbar-static navbar-light navbar-without-dd-arrow navbar-shadow menu-border" role="navigation" data-menu="menu-wrapper">
-    <!-- Horizontal menu content-->
-    <div class="navbar-container main-menu-content" data-menu="menu-container">
-        <!-- include ../../../includes/mixins-->
-        <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
-            <li class="nav-item">
-                <a class="nav-link" href="javascript:;">
-                    <i class="icon-control-play"></i>
-                    <span>Démarrer le tour</span>
-                </a>
-            </li>
-            @yield('admin-navs')
-        </ul>
-    </div>
-    <!-- /horizontal menu content-->
-</div>
+{{--<div class="header-navbar navbar-expand-sm navbar navbar-horizontal navbar-static navbar-light navbar-without-dd-arrow navbar-shadow menu-border" role="navigation" data-menu="menu-wrapper">--}}
+    {{--<!-- Horizontal menu content-->--}}
+    {{--<div class="navbar-container main-menu-content" data-menu="menu-container">--}}
+        {{--<!-- include ../../../includes/mixins-->--}}
+        {{--<ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">--}}
+            {{--<li class="nav-item">--}}
+                {{--<a id="tour" class="nav-link" href="javascript:;">--}}
+                    {{--<i class="icon-control-play"></i>--}}
+                    {{--<span>Démarrer le tour</span>--}}
+                {{--</a>--}}
+            {{--</li>--}}
+            {{--@yield('admin-navs')--}}
+        {{--</ul>--}}
+    {{--</div>--}}
+    {{--<!-- /horizontal menu content-->--}}
+{{--</div>--}}
 <!-- Horizontal navigation-->
 
 <div class="app-content content">
